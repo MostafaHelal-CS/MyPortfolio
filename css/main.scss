@@ -1,0 +1,29 @@
+// Import variables file
+@import "./sass/helpers/variables";
+// Import Mixins file
+@import "./sass/helpers/mixins";
+// Import grid system file
+@import "./sass/layout/grid";
+// Import Heading File
+@import "./sass/helpers/heading";
+// Import Sidebar file
+@import "./sass/layout/sidebar";
+// Import buttons file
+@import "./sass/components/buttons";
+// Import Header file
+@import "./sass/layout/header";
+// Import homepage file
+@import "./sass/pages/homepage";
+// Import About file
+@import "./sass/pages/about";
+// Import Skills file
+@import "./sass/pages/skills";
+// Import Service file
+@import "./sass/pages/services";
+// Import Portfolio file
+@import "./sass/pages/latestProjects";
+// Import Contact file
+@import "./sass/pages/contact";
+// Import footer file
+@import "./sass/layout/footer";
+

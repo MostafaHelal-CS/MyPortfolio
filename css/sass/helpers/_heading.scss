@@ -1,0 +1,44 @@
+.section-heading {
+        margin-bottom: 20px;
+        @media #{$maxMobileScreen} {
+            margin: auto;
+        }
+        h2 {
+            font-size: 36px;
+            width: fit-content;
+            position: relative;
+            letter-spacing: 2px;
+            padding-bottom: 5px;
+            word-spacing: 4px;
+            @media #{$maxMobileScreen} {
+                margin-bottom: 40px;
+                font-size: 26px;
+            }
+            &::before , &::after{
+                content: '';
+                position: absolute;
+                background-color: $main_color;
+                height: 2.5px;
+                left: 0;
+            }
+            &::before {
+                width: 100px;
+                bottom: 0;
+                @media #{$maxMobileScreen} {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            &::after {
+                width: 60px;
+                bottom: -8px;
+                @media #{$maxMobileScreen} {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            span {
+                color: $main_color;
+            }
+        }
+    }

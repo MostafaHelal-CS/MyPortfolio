@@ -1,0 +1,77 @@
+.section {
+    @media #{$maxMobileScreen} {
+        left: 0;
+        padding: 0;
+        padding-top: 100px;
+    }
+    .skills-container {
+        padding-top: 20px;
+        overflow: hidden;
+        .skill-col {
+            float: left;
+            width: (98% / 2);
+            &:not(:last-child) {
+                margin-right: 2%;
+            }
+            @media #{$maxLargeScreen} {
+                width: 100%;
+            }
+            .skill-box {
+                background-color: $sidebar_bg;
+                margin-bottom: 20px;
+                padding: 10px ;
+                border-radius: 8px;
+                @include prefixers(display , flex , webkit moz o ms);
+                @media #{$maxMobileScreen} {
+                    flex-wrap: wrap;
+                }
+                .skill-name {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    width: 200px;
+                    margin-right: 10px;
+                    font-size: 14px;
+                    text-align: center;
+                    line-height: 25px;
+                    @media #{$maxMobileScreen} {
+                        font-size: 14px;
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+                    i {
+                        color: $main_color;
+                        font-size: 20px;
+                        margin-bottom: 10px;
+                        display: none;
+                        @media #{$maxMobileScreen} {
+                            display: block;
+                            text-align: center;
+                        
+                        }
+                    }
+                }
+                .skill-progress {
+                    width: 100%;
+                    height: 25px;
+                    background-color: $content_bg;
+                    border-radius: 5px;
+                    position: relative;
+                    overflow: hidden;  
+                    .progress-value {
+                        position: absolute;
+                        top: 0;
+                        width: 0;
+                        left: 0;
+                        height: 100%;
+                        background-color: $main_color;
+                        transition: 1.5s all ease-in-out; 
+                    }
+                    @media #{$maxMobileScreen} {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+}

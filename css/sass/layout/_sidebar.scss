@@ -1,0 +1,181 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 100vh;
+    text-align: center;
+    background-color: $sidebar_bg;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    transition: 0.3s ease-in-out;
+    border-right: 2px solid $main_color;
+    box-shadow: 0 0 5px $main_color;
+    &.openSideBar {
+        transform: translateX(0);
+    }
+    @media (max-width:768px) {
+        transform: translateX(-272px);
+    }
+    .logo-name {
+        img {
+            max-width: 65%;
+            border-radius: 50%;
+            border-left: 4px solid $main_color;
+            border-top: 4px solid $main_color;
+        }
+    }
+    .logo {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        top: 20px;
+        @media (max-width:992px) {
+            margin-bottom: 0;
+        }
+        .logo-title {
+            position: absolute;
+            left: 50%;
+            top: 50px;
+            transform: translateX(-50%);
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 3px;
+            color: #FFF;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 15px 30px;
+            @media #{$maxMobileScreen} {
+                top:0;
+            }
+            &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-top: 5px solid $main_color;
+            border-left: 5px solid $main_color;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            border-bottom: 5px solid $main_color;
+            border-right: 5px solid $main_color;
+            animation: animatone 4s linear;
+        }
+            span {
+                color: $main_color;
+                font-size: 32px;
+            }
+        }
+    }
+    .main-image {
+        width: 100%;
+        margin-bottom: 20px;
+        display: none;
+        img {
+            max-width: 60%;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            
+            border-radius: 50%;
+            border-left: 4px solid $main_color;
+            border-bottom: 4px solid $main_color;
+        }
+        @media (max-width:992px) {
+            display: block;
+        }
+    }
+    .navlinks {
+        list-style: none;
+        width: 100%;
+        // text-align: left;
+        li {
+            display: block;
+            padding: 5px 20px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #444;
+            color: #FFF;
+            a {
+                text-decoration: none;
+                color: #FFF;
+                text-align: left;
+                transition: 0.3s ease-in-out;
+                &.active , &:hover {
+                    color: $main_color;
+                }
+                i {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+    .social-links {
+        padding-top: 30px;
+        list-style: none;
+        display: flex;
+        li {
+            &:not(:last-child){
+                margin-right: 15px;
+            }
+            a {
+                i {
+                    color: $main_color;
+                    transition: 0.3s ease-in-out;
+                    font-size: 17px;
+                    &.facebook:hover {
+                    color: #1877f2;
+                    }
+                    &.github:hover {
+                        color: #333;
+                    }
+                    &.linkedin:hover {
+                        color: #0a66c2;
+                    }
+                    &.whatsapp:hover {
+                        color: #25d366;
+                    }
+                    &.mail:hover {
+                        color: #168de2;
+                    }
+                    &.phone:hover {
+                        color: $main_color;
+                    }
+                }
+            }
+        }
+    }
+    .toggler {
+        padding: 10px;
+        background-color: $sidebar_bg;
+        border-radius: 5px;
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 270px;
+        cursor: pointer;
+        @media (max-width:768px) {
+            display: block;
+        }
+        span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: $main_color;
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

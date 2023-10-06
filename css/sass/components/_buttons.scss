@@ -1,0 +1,67 @@
+.main-button {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: $sidebar_bg;
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: fit-content;
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: $main_color;
+        transition: 0.3s ease-in-out;
+        color: #FFF;
+        z-index: -1;
+    }
+    &:hover::before {
+        width: 100%;
+    }
+}
+
+.scrollTopBtn {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    
+    background-color: $sidebar_bg;
+    right: 10px;
+    top: 85%;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
+    z-index: 1000;
+    color: $main_color;
+    border-left:3px solid $main_color;
+    border-bottom:3px solid $main_color;
+    border-bottom:3px solid $main_color;
+    transition: 0.3s ease-in-out;
+    transform: translate(100px , 100px);
+    box-shadow: 0 0 10px $main_color;
+    &.showBtn {
+        transform:translate(-20px , 30px);
+    }
+    @media #{$maxMobileScreen} {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        line-height: 35px;
+        top: 80%;
+        &.showBtn {
+        transform:translate(-10px , 30px);
+        }
+    }
+}
